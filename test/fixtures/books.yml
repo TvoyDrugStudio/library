@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyText
+  author: MyString
+  key: 
+  publication: 2019-06-08
+  arrival: 2019-06-08
+  building: one
+
+two:
+  name: MyText
+  author: MyString
+  key: 
+  publication: 2019-06-08
+  arrival: 2019-06-08
+  building: two

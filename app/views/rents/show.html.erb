@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Книга:</strong>
+  <%= @rent.book %>
+</p>
+
+<p>
+  <strong>Абонент:</strong>
+  <%= @rent.user %>
+</p>
+
+<p>
+  <strong>Дата выдачи:</strong>
+  <%= @rent.give %>
+</p>
+
+<p>
+  <strong>Дата возврата:</strong>
+  <%= @rent.giveback %>
+</p>
+
+<%= link_to 'Изменить', edit_rent_path(@rent) %> |
+<%= link_to 'Назад', rents_path %>

@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Фамилия:</strong>
+  <%= @user.lastname %>
+</p>
+
+<p>
+  <strong>Имя:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Адрес:</strong>
+  <%= @user.address %>
+</p>
+
+<p>
+  <strong>Телефон:</strong>
+  <%= @user.phone %>
+</p>
+
+<p>
+  <strong>Номер билета:</strong>
+  <%= @user.number %>
+</p>
+
+<p>
+  <strong>Библиотека:</strong>
+  <%= @user.building %>
+</p>
+
+<%= link_to 'Изменить', edit_user_path(@user) %> |
+<%= link_to 'Назад', users_path %>

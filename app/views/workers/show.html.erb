@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Фамилия:</strong>
+  <%= @worker.lastname %>
+</p>
+
+<p>
+  <strong>Имя:</strong>
+  <%= @worker.name %>
+</p>
+
+<p>
+  <strong>Дата рождения:</strong>
+  <%= @worker.boring %>
+</p>
+
+<p>
+  <strong>Дата принятия:</strong>
+  <%= @worker.offer %>
+</p>
+
+<p>
+  <strong>Должность:</strong>
+  <%= @worker.lvl %>
+</p>
+
+<p>
+  <strong>Образование:</strong>
+  <%= @worker.edu %>
+</p>
+
+<p>
+  <strong>Библиотека:</strong>
+  <%= @worker.building %>
+</p>
+
+<%= link_to 'Изменить', edit_worker_path(@worker) %> |
+<%= link_to 'Назад', workers_path %>

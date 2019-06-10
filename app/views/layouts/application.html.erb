@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Library</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css' %>
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+  <body>
+    <nav class="site-header sticky-top py-1">
+  <div class="container d-flex flex-column flex-md-row justify-content-between">
+
+    <span class="py-2 d-none d-md-inline-block" style="font-size:200%"><%= link_to "Главная страница",
+    home_path %></span>
+    <span class="py-2 d-none d-md-inline-block" style="font-size:200%"><%= link_to "Библиотеки",
+    lbrs_path %></span>
+    <span class="py-2 d-none d-md-inline-block" style="font-size:200%"><%= link_to "Абоненты",
+    users_path %></span>
+    <span class="py-2 d-none d-md-inline-block" style="font-size:200%"><%= link_to "Книги",
+    books_path %></span>
+    <span class="py-2 d-none d-md-inline-block" style="font-size:200%"><%= link_to "Сотрудники",
+    workers_path %></span>
+    <span class="py-2 d-none d-md-inline-block" style="font-size:200%"><%= link_to "Выдача книг",
+    rents_path %></span>
+  </div>
+</nav>
+<div  class="container">
+  <%= yield %>
+</div>
+</body>
+
+</html>

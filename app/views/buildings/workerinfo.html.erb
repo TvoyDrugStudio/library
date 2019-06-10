@@ -1,0 +1,38 @@
+<h1>Информация о сотрудниках, прикрепленных к библиотекам</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Номер библиотеки</th>
+      <th>Название</th>
+
+      <th>Номер сотрудника</th>
+      <th>Фамилия</th>
+      <th>Имя</th>
+      <th>Должность</th>
+      <th colspan="3"></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- @comments is passed from controller to view -->
+    <% @workers.each do |worker| %>           <!-- for loop -->
+      <tr>
+        <td><%= worker.building.id %></td>         <!--get Post ID using reference -->
+        <td><%= worker.building.name %></td>      <!--get Post title using ref -->
+
+        <td><%= worker.id %></td>              <!--get Comment ID -->
+        <td><%= worker.lastname %></td>              <!--get Comment from Comment -->
+        <td><%= worker.name %></td>
+        <td><%= worker.lvl %></td>
+
+        <td><%= link_to 'Просмотр сотрудника', worker %></td>
+        <td><%= link_to 'Изменить сотрудника', edit_worker_path(worker) %></td>
+        <td><%= link_to 'Удалить сотрудника', worker, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+        <td><%= link_to 'Просмотр библиотеки', worker.building %></td>
+        <td><%= link_to 'Изменить библиотеку', edit_building_path(worker.building) %></td>
+        <td><%= link_to 'Удалить библиотеку', worker.building, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

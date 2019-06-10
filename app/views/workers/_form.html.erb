@@ -1,0 +1,52 @@
+<%= form_with(model: worker, local: true) do |form| %>
+  <% if worker.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(worker.errors.count, "error") %> prohibited this worker from being saved:</h2>
+
+      <ul>
+      <% worker.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Фамилия %>
+    <%= form.text_field :lastname %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Имя %>
+    <%= form.text_field :name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Дата_рождения %>
+    <%= form.date_select :boring %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Дата_принятия %>
+    <%= form.date_select :offer %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Должность %>
+    <%= form.text_field :lvl %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Образование %>
+    <%= form.text_area :edu %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Библиотека %>
+    <%= form.text_field :building_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

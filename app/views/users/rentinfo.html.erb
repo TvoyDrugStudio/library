@@ -1,0 +1,42 @@
+<h1>Информация об абонентах и взятых ими книгах </h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Номер абонента</th>
+      <th>Номер билета</th>
+
+      <th>Номер книги</th>
+      <th>Название книги</th>
+
+      <th>Номер выдачи</th>
+      <th>Дата выдачи</th>
+      <th>Дата сдачи</th>
+      <th colspan="3"></th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- @comments is passed from controller to view -->
+    <% @rents.each do |rent| %>           <!-- for loop -->
+      <tr>
+        <td><%= rent.user.id %></td>         <!--get Post ID using reference -->
+        <td><%= rent.user.number %></td>
+
+        <td><%= rent.book.id %></td>
+        <td><%= rent.book.name %></td>
+
+        <td><%= rent.id %></td>              <!--get Comment ID -->
+        <td><%= rent.give %></td>
+        <td><%= rent.giveback %></td>
+
+        <td><%= link_to 'Просмотр абонента', rent.user %></td>
+        <td><%= link_to 'Просмотр книги', rent.book %></td>
+        <td><%= link_to 'Просмотр выдачи', rent %></td>
+        <td><%= link_to 'Изменить выдачу', edit_rent_path(rent) %></td>
+        <td><%= link_to 'Удалить выдачу', rent, method: :delete, data: { confirm: 'Вы уверены?' } %></td>
+
+      </tr>
+    <% end %>
+  </tbody>
+</table>
